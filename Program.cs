@@ -12,6 +12,7 @@ namespace ProductReviewManagement
             InitializeList();
             var management = new Management();
             management.Top3Records(productReviewList);
+            management.SpecificRecords(productReviewList);
             
         }
         public static void InitializeList()

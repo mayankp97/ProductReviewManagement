@@ -20,5 +20,16 @@ namespace ProductReviewManagement
                 Console.WriteLine(list.ProductID);
             }
         }
+        public void SpecificRecords(List<ProductReview> listProductReview)
+        {
+            var recordData = from productReviews in listProductReview
+                             where (productReviews.ProductID == 1 || productReviews.ProductID == 4 || productReviews.ProductID == 9)
+                             && productReviews.Rating > 3
+                             select productReviews;
+            foreach (var list in recordData)
+            {
+                Console.WriteLine("ProductID: " + list.ProductID);
+            }
+        }
     }
 }
