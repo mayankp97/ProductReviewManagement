@@ -14,7 +14,8 @@ namespace ProductReviewManagement
             //management.Top3Records(productReviewList);
             //management.SpecificRecords(productReviewList);
             //management.RetrieveCountOfRecords(productReviewList);
-            management.RetrieveProductIdAndReview(productReviewList);
+            //management.RetrieveProductIdAndReview(productReviewList);
+            management.RetrieveProductsBySkippingTop5(productReviewList);
             
         }
         public static void InitializeList()
