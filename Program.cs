@@ -11,9 +11,10 @@ namespace ProductReviewManagement
             Console.WriteLine("Welcome to Product Review Management");
             InitializeList();
             var management = new Management();
-            management.Top3Records(productReviewList);
-            management.SpecificRecords(productReviewList);
-            management.RetrieveCountOfRecords(productReviewList);
+            //management.Top3Records(productReviewList);
+            //management.SpecificRecords(productReviewList);
+            //management.RetrieveCountOfRecords(productReviewList);
+            management.RetrieveProductIdAndReview(productReviewList);
             
         }
         public static void InitializeList()
