@@ -8,7 +8,7 @@ namespace ProductReviewManagement
 {
     class Management
     {
-        public readonly DataTable dataTable = new DataTable();
+        public DataTable dataTable;
 
         public void Top3Records(List<ProductReview> listProductReview)
         {

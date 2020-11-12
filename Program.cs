@@ -14,9 +14,12 @@ namespace ProductReviewManagement
             //management.Top3Records(productReviewList);
             //management.SpecificRecords(productReviewList);
             //management.RetrieveCountOfRecords(productReviewList);
-            management.RetrieveProductIdAndReview(productReviewList);
-            
+            //management.RetrieveProductIdAndReview(productReviewList);
+            var linqDT = new LinqDT();
+            management.dataTable = linqDT.AddToDataTableDemo(productReviewList);
+
         }
+
         public static void InitializeList()
         {
             productReviewList = new List<ProductReview>()
