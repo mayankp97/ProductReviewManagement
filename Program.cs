@@ -15,11 +15,12 @@ namespace ProductReviewManagement
             //management.SpecificRecords(productReviewList);
             //management.RetrieveCountOfRecords(productReviewList);
             //management.RetrieveProductIdAndReview(productReviewList);
-            management.RetrieveProductsWithNiceMessage(productReviewList);
+            //management.RetrieveProductsWithNiceMessage(productReviewList);
             var linqDT = new LinqDT();
             management.dataTable = linqDT.AddToDataTableDemo(productReviewList);
             //linqDT.RetrieveRecords(management.dataTable);
             //linqDT.GetAverageRating(management.dataTable);
+            linqDT.RetrieveOrderedProductsByRating(1, management.dataTable);
         }
 
         public static void InitializeList()
