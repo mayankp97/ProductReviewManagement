@@ -22,5 +22,16 @@ namespace ProductReviewManagement
             }
             return table;
         }
+        public void RetrieveRecords(DataTable table)
+        {
+            foreach (DataRow row in table.Rows)
+            {
+                foreach (DataColumn column in table.Columns)
+                {
+                    Console.Write(row[column] + "\t");
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
