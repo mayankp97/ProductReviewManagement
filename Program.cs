@@ -5,11 +5,18 @@ namespace ProductReviewManagement
 {
     class Program
     {
+        public static List<ProductReview> productReviewList;
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Product Review Management");
-
-            List<ProductReview> productReviewList = new List<ProductReview>()
+            InitializeList();
+            var management = new Management();
+            management.Top3Records(productReviewList);
+            
+        }
+        public static void InitializeList()
+        {
+            productReviewList = new List<ProductReview>()
             {
                 new ProductReview(){ProductID=1,UserID=1,Rating=2,Review="Good",IsLike=true},
                 new ProductReview(){ProductID=2,UserID=1,Rating=4,Review="Good",IsLike=true},
