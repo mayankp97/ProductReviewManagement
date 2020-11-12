@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Text;
 
 namespace ProductReviewManagement
@@ -31,6 +32,16 @@ namespace ProductReviewManagement
                     Console.Write(row[column] + "\t");
                 }
                 Console.WriteLine();
+            }
+        }
+        public void GetAverageRating(DataTable table)
+        {
+            var recordedData = from products in table.AsEnumerable()
+                               group products by products.Field<int>("ProductId") into g
+                               select new { ProductId = g.Key, Average = g.Average(a => a.Field<double>("Rating")) };
+            foreach (var row in recordedData)
+            {
+                Console.Write(row.ProductId + "\t" + row.Average + "\n");
             }
         }
     }

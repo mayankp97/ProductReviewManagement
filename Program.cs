@@ -17,7 +17,8 @@ namespace ProductReviewManagement
             //management.RetrieveProductIdAndReview(productReviewList);
             var linqDT = new LinqDT();
             management.dataTable = linqDT.AddToDataTableDemo(productReviewList);
-            linqDT.RetrieveRecords(management.dataTable);
+            //linqDT.RetrieveRecords(management.dataTable);
+            linqDT.GetAverageRating(management.dataTable);
         }
 
         public static void InitializeList()
