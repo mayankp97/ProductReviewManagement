@@ -52,5 +52,20 @@ namespace ProductReviewManagement
                 Console.WriteLine("Product Id:- " + list.ProductID + "\t" + "Review: " + list.Review);
             }
         }
+
+        public void RetrieveProductsWithNiceMessage(List<ProductReview> listProductReview)
+        {
+            var recordedData = from productReviews in listProductReview
+                               where productReviews.Review.ToLower().Contains("nice")
+                               select new
+                               {
+                                   productReviews.ProductID,
+                                   productReviews.Review
+                               };
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine("Product Id:- " + list.ProductID + "\t" + "Review: " + list.Review);
+            }
+        }
     }
 }
